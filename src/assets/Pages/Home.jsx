@@ -1,5 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
+import API_KEY from "../Api/apikey";
 
 export default function Home() {
   const [data, setData] = useState([]);
