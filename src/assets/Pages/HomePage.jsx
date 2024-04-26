@@ -5,15 +5,18 @@ import Games from "../Components/Games";
 import Platforms from "../Components/Platforms";
 import DetailsGames from "../Components/DetailsGames";
 import ScreeShots from "../Components/ScreenShots";
+import Genre from "../Components/Genre";
 
 export default function Home() {
   return (
     <>
       <h1>Home Page </h1>
-      <Platforms />
+
       <Games />
-      <DetailsGames />
-      <ScreeShots />
     </>
   );
 }
+/*<Genre />
+<ScreeShots />
+<DetailsGames />
+<Platforms />*/

@@ -17,4 +17,17 @@ export default function DetailsGames() {
 
     fetchData();
   }, []);
+  /*
+  return (
+    <div>
+      {data &&
+        data.results &&
+        data.results.map((DetailsGames, index) => (
+          <div key={index}>
+            <h2>{DetailsGames.name}</h2>
+            <p>{DetailsGames.description}</p>
+          </div>
+        ))}
+    </div>
+  ); */
 }

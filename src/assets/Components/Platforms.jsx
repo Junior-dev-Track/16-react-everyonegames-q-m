@@ -12,9 +12,22 @@ export default function Platforms() {
       );
       const jsonPlatforms = await platforms.json();
       setData(jsonPlatforms);
-      console.log(jsonPlatforms);
+      //console.log(jsonPlatforms);
     };
 
     fetchData();
   }, []);
+
+  return (
+    <div>
+      {data &&
+        data.results &&
+        data.results.map((platform, index) => (
+          <div key={index}>
+            <h2>{platform.name}</h2>
+            <p>{platform.description}</p>
+          </div>
+        ))}
+    </div>
+  );
 }
