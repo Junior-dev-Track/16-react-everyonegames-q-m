@@ -1,7 +1,7 @@
 import { useState } from "react";
-import "../SCSS/header.scss";
+import "../Styles/header.scss";
 
-export default function Header() {
+const Header = () => {
   const [searchTerm, setSearchTerm] = useState("");
 
   const handleChange = (e) => {
@@ -18,4 +18,6 @@ export default function Header() {
       />
     </header>
   );
-}
+};
+
+export default Header;

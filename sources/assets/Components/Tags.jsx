@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
-import API from "./API";
+import API from "../../API";
 
-export default NextWeekReleases = () => {
+export default function Tags() {
   const KEY = import.meta.env.VITE_KEY;
-  const URL = `${KEY}`;
+  const URL = `https://api.rawg.io/api/tags?key=${KEY}`;
   const [data, setData] = useState();
 
   useEffect(() => {
@@ -13,4 +13,4 @@ export default NextWeekReleases = () => {
       setData(request);
     };
   }, []);
-};
+}

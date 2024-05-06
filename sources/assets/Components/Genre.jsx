@@ -1,11 +1,10 @@
 import { useState, useEffect } from "react";
-import API from "./API";
+import API from "../../API";
 
-export default function Stores() {
-  const [data, setData] = useState([]);
+export default function Genre() {
   const KEY = import.meta.env.VITE_KEY;
-  const URL = `https://api.rawg.io/api/stores?key=${KEY}`;
-
+  const URL = `https://api.rawg.io/api/genres/{id}?key=${KEY}`;
+  const [data, setData] = useState([]);
   useEffect(() => {
     return async () => {
       const request = await API(URL);
@@ -18,11 +17,11 @@ export default function Stores() {
     <div>
       {data &&
         data.results &&
-        data.results.map((stores, index) => (
+        data.results.map((genres, index) => (
           <div key={index}>
-            <h2>{stores.name}</h2>
+            <h2>{genres.name}</h2>
 
-            <p>{stores.description}</p>
+            <p>{genres.description}</p>
           </div>
         ))}
     </div>

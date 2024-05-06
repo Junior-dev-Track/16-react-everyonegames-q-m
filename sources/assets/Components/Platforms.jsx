@@ -1,10 +1,11 @@
 import { useState, useEffect } from "react";
-import API from "./API";
+import API from "../../API";
 
-export default function Genre() {
-  const KEY = import.meta.env.VITE_KEY;
-  const URL = `https://api.rawg.io/api/genres/{id}?key=${KEY}`;
+export default function Platforms() {
   const [data, setData] = useState([]);
+  const KEY = import.meta.env.VITE_KEY;
+  const URL = `https://api.rawg.io/api/platforms?key=${KEY}`;
+
   useEffect(() => {
     return async () => {
       const request = await API(URL);
@@ -17,11 +18,11 @@ export default function Genre() {
     <div>
       {data &&
         data.results &&
-        data.results.map((genres, index) => (
+        data.results.map((platform, index) => (
           <div key={index}>
-            <h2>{genres.name}</h2>
-
-            <p>{genres.description}</p>
+            <h2>{platform.name}</h2>
+            <img src={platform.image_background} />
+            <p>{platform.description}</p>
           </div>
         ))}
     </div>

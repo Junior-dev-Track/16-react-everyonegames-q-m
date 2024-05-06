@@ -12,7 +12,7 @@ import BestOfTheYears from "./assets/Pages/BestOfTheYearsPage";
 import NewReleases from "./assets/Pages/NewReleasesPage";
 import NextWeekReleases from "./assets/Pages/NextWeekReleasesPage";
 
-function App() {
+const App = () => {
   return (
     <Router>
       <Routes>
@@ -30,6 +30,6 @@ function App() {
       </Routes>
     </Router>
   );
-}
+};
 
 export default App;

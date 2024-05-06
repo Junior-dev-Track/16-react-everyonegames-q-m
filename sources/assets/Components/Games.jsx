@@ -1,14 +1,14 @@
 import { useState, useEffect } from "react";
-import API from "./API";
+import API from "../../API";
 
-import "../SCSS/main.scss";
-import "../SCSS/card-game.scss";
+import "../Styles/main.scss";
+import "../Styles/card-game.scss";
 
-export default function Games() {
+const Games = () => {
   const KEY = import.meta.env.VITE_KEY;
   const URL = `https://api.rawg.io/api/games?key=${KEY}`;
-  const [data, setData] = useState();
 
+  const [data, setData] = useState();
   useEffect(() => {
     return async () => {
       const request = await API(URL);
@@ -30,4 +30,6 @@ export default function Games() {
         ))}
     </main>
   );
-}
+};
+
+export default Games;

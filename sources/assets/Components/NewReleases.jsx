@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
-import API from "./API";
+import API from "../../API";
 
-export default function Publisher() {
+export default function NewReleases() {
   const KEY = import.meta.env.VITE_KEY;
-  const URL = `https://api.rawg.io/api/publishers?key=${KEY}`;
+  const URL = `=${KEY}`;
   const [data, setData] = useState();
 
   useEffect(() => {

@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
-import API from "./API";
+import API from "../../API";
 
-export default function NewReleases() {
+const BestOfTheYears = () => {
   const KEY = import.meta.env.VITE_KEY;
-  const URL = `=${KEY}`;
+  const URL = `${KEY}`;
   const [data, setData] = useState();
 
   useEffect(() => {
@@ -13,4 +13,6 @@ export default function NewReleases() {
       setData(request);
     };
   }, []);
-}
+};
+
+export default BestOfTheYears;

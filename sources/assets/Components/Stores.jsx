@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
-import API from "./API";
+import API from "../../API";
 
-export default function Platforms() {
+export default function Stores() {
   const [data, setData] = useState([]);
   const KEY = import.meta.env.VITE_KEY;
-  const URL = `https://api.rawg.io/api/platforms?key=${KEY}`;
+  const URL = `https://api.rawg.io/api/stores?key=${KEY}`;
 
   useEffect(() => {
     return async () => {
@@ -18,11 +18,11 @@ export default function Platforms() {
     <div>
       {data &&
         data.results &&
-        data.results.map((platform, index) => (
+        data.results.map((stores, index) => (
           <div key={index}>
-            <h2>{platform.name}</h2>
-            <img src={platform.image_background} />
-            <p>{platform.description}</p>
+            <h2>{stores.name}</h2>
+
+            <p>{stores.description}</p>
           </div>
         ))}
     </div>
