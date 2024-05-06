@@ -4,6 +4,7 @@ import Home from "./assets/Pages/HomePage";
 import Browse from "./assets/Pages/BrowsePage";
 import StorePages from "./assets/Pages/StorePage";
 import GenrePage from "./assets/Pages/GenrePage";
+import CreatorsPage from "./assets/Pages/CreatorPage";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route path="/browse" element={<Browse />} />
         <Route path="/store" element={<StorePages />} />
         <Route path="/genre" element={<GenrePage />} />
+        <Route path="/creators" element={<CreatorsPage />} />
       </Routes>
     </Router>
   );

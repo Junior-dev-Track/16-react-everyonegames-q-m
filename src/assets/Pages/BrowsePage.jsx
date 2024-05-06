@@ -19,6 +19,9 @@ export default function Browse() {
       <Link to="genre">
         <button>Genres</button>
       </Link>
+      <Link to="creators">
+        <button>Creators</button>
+      </Link>
     </>
   );
 }

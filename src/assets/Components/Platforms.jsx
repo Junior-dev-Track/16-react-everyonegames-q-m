@@ -22,6 +22,7 @@ export default function Platforms() {
         data.results.map((platform, index) => (
           <div key={index}>
             <h2>{platform.name}</h2>
+            <img src={platform.image_background} />
             <p>{platform.description}</p>
           </div>
         ))}

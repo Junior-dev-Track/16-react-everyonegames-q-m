@@ -19,6 +19,9 @@ export default function GenrePage() {
       <Link to="genre">
         <button>Genres</button>
       </Link>
+      <Link to="creators">
+        <button>Creators</button>
+      </Link>
     </>
   );
 }
