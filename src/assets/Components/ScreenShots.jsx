@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import API from "../Api/api";
+import API from "./API";
 
 export default function ScreeShots() {
   const [data, setData] = useState([]);

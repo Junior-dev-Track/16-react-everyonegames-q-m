@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import API from "../Api/api";
+import API from "./API";
 
 export default function Creators() {
   const KEY = import.meta.env.VITE_KEY;
@@ -10,7 +10,6 @@ export default function Creators() {
     return async () => {
       const request = await API(URL);
       console.table("Query result :", request);
-
       setData(request);
     };
   }, []);

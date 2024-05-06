@@ -1,6 +1,5 @@
-import React from "react";
 import { useState, useEffect } from "react";
-import API from "../Api/api";
+import API from "./API";
 
 export default function Platforms() {
   const [data, setData] = useState([]);

@@ -1,11 +1,10 @@
 import { useState, useEffect } from "react";
-import API from "../Api/api";
+import API from "./API";
 
 export default function Genre() {
-  const [data, setData] = useState([]);
   const KEY = import.meta.env.VITE_KEY;
-  const URL = `https://api.rawg.io/api/genres/{id}?key=${KEY}`; // replace id
-
+  const URL = `https://api.rawg.io/api/genres/{id}?key=${KEY}`;
+  const [data, setData] = useState([]);
   useEffect(() => {
     return async () => {
       const request = await API(URL);

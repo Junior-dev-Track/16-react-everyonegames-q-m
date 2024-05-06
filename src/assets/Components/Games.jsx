@@ -1,5 +1,8 @@
 import { useState, useEffect } from "react";
-import API from "../Api/api";
+import API from "./API";
+
+import "../SCSS/main.scss";
+import "../SCSS/card-game.scss";
 
 export default function Games() {
   const KEY = import.meta.env.VITE_KEY;
@@ -10,22 +13,21 @@ export default function Games() {
     return async () => {
       const request = await API(URL);
       console.table("Query result :", request);
-
       setData(request);
     };
   }, []);
 
   return (
-    <div>
+    <main>
       {data &&
         data.results &&
-        data.results.map((games, index) => (
-          <div key={index}>
-            <h2>{games.name}</h2>
-            <img src={games.background_image} />
-            <p>{games.description}</p>
+        data.results.map((game, index) => (
+          <div key={index} className="card-game">
+            <h2>{game.name}</h2>
+            <img src={game.background_image} />
+            <p>{game.description}</p>
           </div>
         ))}
-    </div>
+    </main>
   );
 }

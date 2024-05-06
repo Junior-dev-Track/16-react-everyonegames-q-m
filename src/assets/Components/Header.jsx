@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import { useState } from "react";
+import "../SCSS/Header.scss";
 
 export default function Header() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -8,6 +9,7 @@ export default function Header() {
   };
   return (
     <header>
+      <a href="#">EVERYONE GAMES</a>
       <input
         type="text"
         placeholder="Search..."
