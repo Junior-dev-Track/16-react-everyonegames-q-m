@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import API_KEY from "../Api/apikey";
+import KEY from "../Api/key";
 
 export default function Genre() {
   const [data, setData] = useState([]);
@@ -7,7 +7,7 @@ export default function Genre() {
   useEffect(() => {
     const fetchData = async () => {
       const genre = await fetch(
-        `https://api.rawg.io/api/genres/{id}?key=${API_KEY}`
+        `https://api.rawg.io/api/genres/{id}?key=${KEY}`,
       );
       console.log(genre);
 

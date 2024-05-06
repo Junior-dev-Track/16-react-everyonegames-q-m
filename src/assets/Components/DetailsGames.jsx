@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import API_KEY from "../Api/apikey";
+import API_KEY from "../Api/key";
 
 export default function DetailsGames() {
   const [data, setData] = useState([]);
@@ -7,7 +7,7 @@ export default function DetailsGames() {
   useEffect(() => {
     const fetchData = async () => {
       const DetailsGames = await fetch(
-        `https://api.rawg.io/api/games/{id}?key=${API_KEY}`
+        `https://api.rawg.io/api/games/{id}?key=${KEY}`,
       ); // replace id whit the id of the game
       //console.log(DetailsGames);
       const jsonDetailsGames = await DetailsGames.json();

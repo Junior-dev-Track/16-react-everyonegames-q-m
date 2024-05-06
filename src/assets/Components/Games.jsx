@@ -1,23 +1,19 @@
 import { useState, useEffect } from "react";
-import API_KEY from "../Api/apikey";
+import API from "../Api/api";
 
 export default function Games() {
-  const [data, setData] = useState([]);
-
+  const KEY = import.meta.env.VITE_KEY;
+  const URL = `https://api.rawg.io/api/games?key=${KEY}`;
+  const [data, setData] = useState();
   useEffect(() => {
-    const fetchData = async () => {
-      const games = await fetch(`https://api.rawg.io/api/games?key=${API_KEY}`);
-      if (!games.ok) {
-        throw new Error(`HTTP error! status: ${games.status}`);
-      }
-      const jsonGames = await games.json();
-      setData(jsonGames);
+    return async () => {
+      const request = await API(URL);
+      console.table("Query result :", request);
 
-      console.log(jsonGames);
+      setData(request);
     };
-
-    fetchData();
   }, []);
+
   return (
     <div>
       {data &&
@@ -25,6 +21,7 @@ export default function Games() {
         data.results.map((games, index) => (
           <div key={index}>
             <h2>{games.name}</h2>
+            <img src={games.background_image} />
             <p>{games.description}</p>
           </div>
         ))}

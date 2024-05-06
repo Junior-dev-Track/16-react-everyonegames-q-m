@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import API_KEY from "../Api/apikey";
+import KEY from "../Api/key";
 
 export default function ScreeShots() {
   const [data, setData] = useState([]);
@@ -7,7 +7,7 @@ export default function ScreeShots() {
   useEffect(() => {
     const fetchData = async () => {
       const screenShots = await fetch(
-        `https://api.rawg.io/api/games/{game_pk}/screenshots?key=${API_KEY}`
+        `https://api.rawg.io/api/games/{game_pk}/screenshots?key=${KEY}`,
       );
       const jsonScreenShots = await screenShots.json();
       setData(jsonScreenShots);

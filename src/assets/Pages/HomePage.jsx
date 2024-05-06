@@ -1,12 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { useState, useEffect } from "react";
-import API_KEY from "../Api/apikey";
 import Games from "../Components/Games";
-import Platforms from "../Components/Platforms";
-import DetailsGames from "../Components/DetailsGames";
-import ScreeShots from "../Components/ScreenShots";
-import Genre from "../Components/Genre";
 
 export default function Home() {
   return (
@@ -14,6 +8,7 @@ export default function Home() {
       <h1>Home Page </h1>
 
       <Games />
+
       <Link to="browse">
         <button>Browse</button>
       </Link>
@@ -26,7 +21,3 @@ export default function Home() {
     </>
   );
 }
-/*<Genre />
-<ScreeShots />
-<DetailsGames />
-<Platforms />*/

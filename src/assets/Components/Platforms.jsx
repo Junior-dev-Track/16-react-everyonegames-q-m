@@ -1,6 +1,6 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import API_KEY from "../Api/apikey";
+import KEY from "../Api/key";
 
 export default function Platforms() {
   const [data, setData] = useState([]);
@@ -8,7 +8,7 @@ export default function Platforms() {
   useEffect(() => {
     const fetchData = async () => {
       const platforms = await fetch(
-        `https://api.rawg.io/api/platforms?key=${API_KEY}`
+        `https://api.rawg.io/api/platforms?key=${KEY}`,
       );
       const jsonPlatforms = await platforms.json();
       setData(jsonPlatforms);
