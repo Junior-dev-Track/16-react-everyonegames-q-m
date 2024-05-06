@@ -1,21 +1,16 @@
 import { useState, useEffect } from "react";
-import KEY from "../Api/key";
+import API from "../Api/api";
 
 export default function Genre() {
   const [data, setData] = useState([]);
+  const KEY = import.meta.env.VITE_KEY;
+  const URL = `https://api.rawg.io/api/genres/{id}?key=${KEY}`;
 
   useEffect(() => {
-    const fetchData = async () => {
-      const genre = await fetch(
-        `https://api.rawg.io/api/genres/{id}?key=${KEY}`,
-      );
-      console.log(genre);
-
-      const jasonGenre = await genre.json();
-      setData(jasonGenre);
-      console.log();
+    return async () => {
+      const request = await API(URL);
+      console.table("Query result :", request);
+      setData(request);
     };
-
-    fetchData();
   }, []);
 }

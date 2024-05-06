@@ -5,6 +5,7 @@ export default function Games() {
   const KEY = import.meta.env.VITE_KEY;
   const URL = `https://api.rawg.io/api/games?key=${KEY}`;
   const [data, setData] = useState();
+
   useEffect(() => {
     return async () => {
       const request = await API(URL);

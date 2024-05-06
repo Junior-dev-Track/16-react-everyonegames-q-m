@@ -1,21 +1,18 @@
 import { useState, useEffect } from "react";
-import API_KEY from "../Api/key";
+import API from "../Api/api";
 
 export default function DetailsGames() {
   const [data, setData] = useState([]);
+  const KEY = import.meta.env.VITE_KEY;
+  const URL = `https://api.rawg.io/api/games/{id}?key=${KEY}`; // replace id whit the id of the game
 
   useEffect(() => {
-    const fetchData = async () => {
-      const DetailsGames = await fetch(
-        `https://api.rawg.io/api/games/{id}?key=${KEY}`,
-      ); // replace id whit the id of the game
-      //console.log(DetailsGames);
-      const jsonDetailsGames = await DetailsGames.json();
-      setData(jsonDetailsGames);
-      console.log(jsonDetailsGames);
-    };
+    return async () => {
+      const request = await API(URL);
+      console.table("Query result :", request);
 
-    fetchData();
+      setData(request);
+    };
   }, []);
   /*
   return (

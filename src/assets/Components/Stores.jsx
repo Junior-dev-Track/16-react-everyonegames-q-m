@@ -1,19 +1,20 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import KEY from "../Api/key";
+import API from "../Api/api";
 
 export default function Stores() {
   const [data, setData] = useState([]);
+  const KEY = import.meta.env.VITE_KEY;
+  const URL = `https://api.rawg.io/api/stores?key=${KEY}`;
 
   useEffect(() => {
-    const fetchData = async () => {
-      const stores = await fetch(`https://api.rawg.io/api/stores?key=${KEY}`);
-      const jsonStore = await stores.json();
-      setData(jsonStore);
+    return async () => {
+      const request = await API(URL);
+      console.table("Query result :", request);
+      setData(request);
     };
-
-    fetchData();
   }, []);
+
   return (
     <div>
       {data &&

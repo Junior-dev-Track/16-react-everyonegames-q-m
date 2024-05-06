@@ -1,21 +1,18 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import KEY from "../Api/key";
+import API from "../Api/api";
 
 export default function Platforms() {
   const [data, setData] = useState([]);
+  const KEY = import.meta.env.VITE_KEY;
+  const URL = `https://api.rawg.io/api/platforms?key=${KEY}`;
 
   useEffect(() => {
-    const fetchData = async () => {
-      const platforms = await fetch(
-        `https://api.rawg.io/api/platforms?key=${KEY}`,
-      );
-      const jsonPlatforms = await platforms.json();
-      setData(jsonPlatforms);
-      //console.log(jsonPlatforms);
+    return async () => {
+      const request = await API(URL);
+      console.table("Query result :", request);
+      setData(request);
     };
-
-    fetchData();
   }, []);
 
   return (
