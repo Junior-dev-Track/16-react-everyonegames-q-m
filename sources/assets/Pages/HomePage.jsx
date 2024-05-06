@@ -1,15 +1,15 @@
 import Header from "../Components/Header";
 import Nav from "../Components/Nav";
-import Games from "../Components/Games";
+import Home from "../Components/Home";
 
-const Home = () => {
+const HomePage = () => {
   return (
     <>
       <Header />
       <Nav />
-      <Games />
+      <Home />
     </>
   );
 };
 
-export default Home;
+export default HomePage;

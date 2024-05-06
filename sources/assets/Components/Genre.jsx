@@ -1,5 +1,5 @@
-import { useState, useEffect } from "react";
 import API from "../../API";
+import { useState, useEffect } from "react";
 
 export default function Genre() {
   const KEY = import.meta.env.VITE_KEY;

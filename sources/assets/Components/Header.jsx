@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "../Styles/header.scss";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -9,13 +9,18 @@ const Header = () => {
   };
   return (
     <header>
-      <a href="#">EVERYONE GAMES</a>
-      <input
-        type="text"
-        placeholder="Search..."
-        value={searchTerm}
-        onChange={handleChange}
-      />
+      <div>
+        <Link to="/">
+          <button>EVERYONE GAMES</button>
+        </Link>
+
+        <input
+          type="text"
+          placeholder="Search..."
+          value={searchTerm}
+          onChange={handleChange}
+        />
+      </div>
     </header>
   );
 };

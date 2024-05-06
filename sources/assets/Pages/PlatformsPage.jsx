@@ -1,14 +1,15 @@
 import Header from "../Components/Header";
 import Nav from "../Components/Nav";
+import Platforms from "../Components/Platforms";
 
-const Browse = () => {
+const PlatformsPage = () => {
   return (
     <>
       <Header />
       <Nav />
-      <h1>Browse </h1>
+      <Platforms />
     </>
   );
 };
 
-export default Browse;
+export default PlatformsPage;

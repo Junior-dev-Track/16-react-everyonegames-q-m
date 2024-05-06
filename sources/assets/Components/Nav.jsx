@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
-import "../Styles/nav.scss";
 
-export default function Nav() {
+const Nav = () => {
   return (
     <nav>
       <ol>
@@ -11,8 +10,8 @@ export default function Nav() {
           </Link>
         </li>
         <li>
-          <Link to="browse">
-            <button>Browse</button>
+          <Link to="platforms">
+            <button>Platforms</button>
           </Link>
         </li>
         <li>
@@ -63,4 +62,6 @@ export default function Nav() {
       </ol>
     </nav>
   );
-}
+};
+
+export default Nav;

@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 import Home from "./assets/Pages/HomePage";
-import Browse from "./assets/Pages/BrowsePage";
+import Platforms from "./assets/Pages/PlatformsPage";
 import StorePages from "./assets/Pages/StorePage";
 import GenrePage from "./assets/Pages/GenrePage";
 import CreatorsPage from "./assets/Pages/CreatorPage";
@@ -17,7 +17,7 @@ const App = () => {
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/browse" element={<Browse />} />
+        <Route path="/platforms" element={<Platforms />} />
         <Route path="/store" element={<StorePages />} />
         <Route path="/genre" element={<GenrePage />} />
         <Route path="/tags" element={<Tags />} />
