@@ -1,7 +1,7 @@
-import Platforms from "../Components/Platforms";
 import { Link } from "react-router-dom";
+import BestOfTheYears from "../Components/BestOfTheYears";
 
-export default function Browse() {
+export default function BestOfTheYears() {
   return (
     <>
       <h1>Browse </h1>

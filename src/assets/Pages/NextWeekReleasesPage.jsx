@@ -1,7 +1,7 @@
-import Platforms from "../Components/Platforms";
 import { Link } from "react-router-dom";
+import NextWeekReleases from "../Components/NextWeekReleases";
 
-export default function Browse() {
+export default function NextWeekReleases() {
   return (
     <>
       <h1>Browse </h1>

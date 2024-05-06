@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "../SCSS/Header.scss";
+import "../SCSS/header.scss";
 
 export default function Header() {
   const [searchTerm, setSearchTerm] = useState("");

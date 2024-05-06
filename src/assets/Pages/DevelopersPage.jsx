@@ -1,8 +1,8 @@
 import Header from "../Components/Header";
 import Nav from "../Components/Nav";
-import Tags from "../Components/Tags";
+import Developers from "../Components/Developers";
 
-export default function Tags() {
+export default function Developers() {
   return (
     <>
       <Header />

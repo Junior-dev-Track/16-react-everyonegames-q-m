@@ -22,6 +22,15 @@ export default function StorePages() {
       <Link to="creators">
         <button>Creators</button>
       </Link>
+      <Link to="bestoftheyears">
+        <button>Best game of the year</button>
+      </Link>
+      <Link to="newreleases">
+        <button>New releases</button>
+      </Link>
+      <Link to="nextweekreleases">
+        <button>Next week releases</button>
+      </Link>
     </>
   );
 }

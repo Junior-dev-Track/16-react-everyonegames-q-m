@@ -1,7 +1,6 @@
-import Platforms from "../Components/Platforms";
 import { Link } from "react-router-dom";
 
-export default function Browse() {
+export default function NewReleases() {
   return (
     <>
       <h1>Browse </h1>
