@@ -4,7 +4,7 @@ import API from "../Api/api";
 export default function Genre() {
   const [data, setData] = useState([]);
   const KEY = import.meta.env.VITE_KEY;
-  const URL = `https://api.rawg.io/api/genres/{id}?key=${KEY}`;
+  const URL = `https://api.rawg.io/api/genres/{id}?key=${KEY}`; // replace id
 
   useEffect(() => {
     return async () => {
@@ -13,4 +13,18 @@ export default function Genre() {
       setData(request);
     };
   }, []);
+
+  return (
+    <div>
+      {data &&
+        data.results &&
+        data.results.map((genres, index) => (
+          <div key={index}>
+            <h2>{genres.name}</h2>
+
+            <p>{genres.description}</p>
+          </div>
+        ))}
+    </div>
+  );
 }

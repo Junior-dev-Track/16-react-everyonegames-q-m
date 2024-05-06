@@ -22,6 +22,7 @@ export default function Stores() {
         data.results.map((stores, index) => (
           <div key={index}>
             <h2>{stores.name}</h2>
+
             <p>{stores.description}</p>
           </div>
         ))}

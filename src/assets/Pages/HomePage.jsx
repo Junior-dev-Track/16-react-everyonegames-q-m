@@ -9,6 +9,9 @@ export default function Home() {
 
       <Games />
 
+      <Link to="/">
+        <button>Home</button>
+      </Link>
       <Link to="browse">
         <button>Browse</button>
       </Link>
