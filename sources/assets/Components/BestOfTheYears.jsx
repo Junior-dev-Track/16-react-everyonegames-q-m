@@ -16,7 +16,8 @@ const BestOfTheYears = () => {
 
   return (
     <main>
-      <div>
+      <div className="container-main">
+        <h1>Best Of The Years</h1>
         <section>
           {data &&
             data.results &&
