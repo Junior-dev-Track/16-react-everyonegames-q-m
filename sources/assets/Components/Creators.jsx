@@ -16,6 +16,7 @@ export default function Creators() {
 
   return (
     <div>
+      <h2>coucou</h2>
       {data &&
         data.results &&
         data.results.map((creators, index) => (

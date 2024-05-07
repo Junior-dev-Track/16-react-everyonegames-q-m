@@ -13,4 +13,6 @@ export default function Developers() {
       setData(request);
     };
   }, []);
+
+  return <h1>coucou</h1>;
 }

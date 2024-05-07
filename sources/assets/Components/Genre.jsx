@@ -15,6 +15,7 @@ export default function Genre() {
 
   return (
     <div>
+      <h1>Coucou</h1>
       {data &&
         data.results &&
         data.results.map((genres, index) => (

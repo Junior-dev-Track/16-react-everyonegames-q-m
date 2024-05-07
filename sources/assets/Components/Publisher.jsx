@@ -13,4 +13,6 @@ export default function Publisher() {
       setData(request);
     };
   }, []);
+
+  return <h1>Coucou</h1>;
 }

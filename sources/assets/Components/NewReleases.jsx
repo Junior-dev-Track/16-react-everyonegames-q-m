@@ -13,4 +13,6 @@ export default function NewReleases() {
       setData(request);
     };
   }, []);
+
+  return <h2>Coucou</h2>;
 }

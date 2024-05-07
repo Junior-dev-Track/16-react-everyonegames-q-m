@@ -13,4 +13,6 @@ export default function Tags() {
       setData(request);
     };
   }, []);
+
+  return <h1>coucou</h1>;
 }
