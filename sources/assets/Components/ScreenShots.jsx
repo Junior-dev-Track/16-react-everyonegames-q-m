@@ -1,11 +1,11 @@
-import { useState, useEffect } from "react";
 import API from "../../API";
+import { useState, useEffect } from "react";
 
-export default function ScreeShots() {
-  const [data, setData] = useState([]);
+const ScreeShots = () => {
   const KEY = import.meta.env.VITE_KEY;
-  const URL = `https://api.rawg.io/api/games/{game_pk}/screenshots?key=${KEY}`; // replace game_pk
+  const URL = `https://api.rawg.io/api/games/{game_pk}/screenshots?key=${KEY}`;
 
+  const [data, setData] = useState([]);
   useEffect(() => {
     return async () => {
       const request = await API(URL);
@@ -13,4 +13,6 @@ export default function ScreeShots() {
       setData(request);
     };
   }, []);
-}
+};
+
+export default ScreeShots;

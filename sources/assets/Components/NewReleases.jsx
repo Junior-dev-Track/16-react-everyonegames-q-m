@@ -1,11 +1,11 @@
-import { useState, useEffect } from "react";
 import API from "../../API";
+import { useState, useEffect } from "react";
 
-export default function NewReleases() {
+const NewReleases = () => {
   const KEY = import.meta.env.VITE_KEY;
   const URL = `=${KEY}`;
-  const [data, setData] = useState();
 
+  const [data, setData] = useState();
   useEffect(() => {
     return async () => {
       const request = await API(URL);
@@ -14,5 +14,13 @@ export default function NewReleases() {
     };
   }, []);
 
-  return <h2>Coucou</h2>;
-}
+  return (
+    <main>
+      <div className="container-main">
+        <h1>New Releases</h1>
+      </div>
+    </main>
+  );
+};
+
+export default NewReleases;

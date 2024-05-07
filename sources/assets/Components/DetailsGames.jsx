@@ -1,11 +1,11 @@
-import { useState, useEffect } from "react";
 import API from "../../API";
+import { useState, useEffect } from "react";
 
-export default function DetailsGames() {
-  const [data, setData] = useState([]);
+const DetailsGames = () => {
   const KEY = import.meta.env.VITE_KEY;
-  const URL = `https://api.rawg.io/api/games/{id}?key=${KEY}`; // replace id whit the id of the game
+  const URL = `https://api.rawg.io/api/games/{id}?key=${KEY}`;
 
+  const [data, setData] = useState([]);
   useEffect(() => {
     return async () => {
       const request = await API(URL);
@@ -14,17 +14,14 @@ export default function DetailsGames() {
       setData(request);
     };
   }, []);
-  /*
+
   return (
-    <div>
-      {data &&
-        data.results &&
-        data.results.map((DetailsGames, index) => (
-          <div key={index}>
-            <h2>{DetailsGames.name}</h2>
-            <p>{DetailsGames.description}</p>
-          </div>
-        ))}
-    </div>
-  ); */
-}
+    <main>
+      <div className="container-main">
+        <h1>Details Games</h1>
+      </div>
+    </main>
+  );
+};
+
+export default DetailsGames;

@@ -1,9 +1,10 @@
 import API from "../../API";
 import { useState, useEffect } from "react";
 
-export default function Genre() {
+const Genre = () => {
   const KEY = import.meta.env.VITE_KEY;
   const URL = `https://api.rawg.io/api/genres/{id}?key=${KEY}`;
+
   const [data, setData] = useState([]);
   useEffect(() => {
     return async () => {
@@ -14,17 +15,21 @@ export default function Genre() {
   }, []);
 
   return (
-    <div>
-      <h1>Coucou</h1>
-      {data &&
-        data.results &&
-        data.results.map((genres, index) => (
-          <div key={index}>
-            <h2>{genres.name}</h2>
+    <main>
+      <div className="container-main">
+        <h1>Genre</h1>
+        {data &&
+          data.results &&
+          data.results.map((genres, index) => (
+            <div key={index}>
+              <h2>{genres.name}</h2>
 
-            <p>{genres.description}</p>
-          </div>
-        ))}
-    </div>
+              <p>{genres.description}</p>
+            </div>
+          ))}
+      </div>
+    </main>
   );
-}
+};
+
+export default Genre;

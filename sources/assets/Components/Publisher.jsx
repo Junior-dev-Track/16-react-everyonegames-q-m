@@ -1,11 +1,11 @@
-import { useState, useEffect } from "react";
 import API from "../../API";
+import { useState, useEffect } from "react";
 
-export default function Publisher() {
+const Publisher = () => {
   const KEY = import.meta.env.VITE_KEY;
   const URL = `https://api.rawg.io/api/publishers?key=${KEY}`;
-  const [data, setData] = useState();
 
+  const [data, setData] = useState();
   useEffect(() => {
     return async () => {
       const request = await API(URL);
@@ -14,5 +14,13 @@ export default function Publisher() {
     };
   }, []);
 
-  return <h1>Coucou</h1>;
-}
+  return (
+    <main>
+      <div className="container-main">
+        <h1>Publisher</h1>
+      </div>
+    </main>
+  );
+};
+
+export default Publisher;
