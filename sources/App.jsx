@@ -11,6 +11,7 @@ import Publisher from "./assets/Pages/PublisherPage";
 import BestOfTheYears from "./assets/Pages/BestOfTheYearsPage";
 import NewReleases from "./assets/Pages/NewReleasesPage";
 import NextWeekReleases from "./assets/Pages/NextWeekReleasesPage";
+import DetailsGames from "./assets/Components/DetailsGames";
 
 const App = () => {
   return (
@@ -27,6 +28,8 @@ const App = () => {
         <Route path="/bestoftheyears" element={<BestOfTheYears />} />
         <Route path="/newreleases" element={<NewReleases />} />
         <Route path="/nextweekreleases" element={<NextWeekReleases />} />
+        <Route path="/games/:id" component={DetailsGames} />
+        <Route path="/detailsgames" element={<DetailsGames />} />
       </Routes>
     </Router>
   );

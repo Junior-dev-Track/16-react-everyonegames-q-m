@@ -1,9 +1,11 @@
 import API from "../../API";
 import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 
 const DetailsGames = () => {
+  const { id } = useParams();
   const KEY = import.meta.env.VITE_KEY;
-  const URL = `https://api.rawg.io/api/games/{id}?key=${KEY}`;
+  const URL = `https://api.rawg.io/api/games/${id}?key=${KEY}`;
 
   const [data, setData] = useState([]);
   useEffect(() => {
@@ -12,6 +14,7 @@ const DetailsGames = () => {
       console.table("Query result :", request);
 
       setData(request);
+      console.log(request);
     };
   }, []);
 
