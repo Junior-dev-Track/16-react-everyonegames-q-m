@@ -11,7 +11,11 @@ import Publisher from "./assets/Pages/PublisherPage";
 import BestOfTheYears from "./assets/Pages/BestOfTheYearsPage";
 import NewReleases from "./assets/Pages/NewReleasesPage";
 import NextWeekReleases from "./assets/Pages/NextWeekReleasesPage";
+<<<<<<< HEAD
 import Game from "./assets/Pages/GamePage";
+=======
+import DetailsGames from "./assets/Components/DetailsGames";
+>>>>>>> e165d2774b79d73f3e9eb14a6b54c28aab5480ac
 
 const App = () => {
   return (
@@ -28,7 +32,12 @@ const App = () => {
         <Route path="/bestoftheyears" element={<BestOfTheYears />} />
         <Route path="/newreleases" element={<NewReleases />} />
         <Route path="/nextweekreleases" element={<NextWeekReleases />} />
+<<<<<<< HEAD
         <Route path="/game/:id" element={<Game />} />
+=======
+        <Route path="/games/:id" component={DetailsGames} />
+        <Route path="/detailsgames" element={<DetailsGames />} />
+>>>>>>> e165d2774b79d73f3e9eb14a6b54c28aab5480ac
       </Routes>
     </Router>
   );
