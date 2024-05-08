@@ -28,7 +28,7 @@ const App = () => {
         <Route path="/bestoftheyears" element={<BestOfTheYears />} />
         <Route path="/newreleases" element={<NewReleases />} />
         <Route path="/nextweekreleases" element={<NextWeekReleases />} />
-        <Route path="/game/:id" element={<Game />} />
+        <Route path="/game/:ID" element={<Game />} />
       </Routes>
     </Router>
   );

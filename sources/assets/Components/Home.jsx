@@ -29,10 +29,12 @@ const Home = () => {
               <div key={index} className="card-game">
                 <img src={result.background_image} />
                 <div className="card-game-contents">
-                  {result.parent_platforms.map((element, index) => (
-                    <p key={index}>{element.platform.name}</p>
-                  ))}
-                  <Link to="/game/:id">
+                  {result.parent_platforms &&
+                    Array.isArray(result.parent_platforms) &&
+                    result.parent_platforms.map((element, platformIndex) => (
+                      <p key={platformIndex}>{element.platform.name}</p>
+                    ))}
+                  <Link to={`/game/${result.id}`}>
                     <button>{result.name}</button>
                   </Link>
                 </div>
