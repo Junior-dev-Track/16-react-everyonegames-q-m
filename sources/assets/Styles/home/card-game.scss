@@ -1,12 +1,12 @@
 .card-game {
   background: #202020;
-  width: 295px;
-  height: 350px;
   display: flex;
   flex-direction: column;
+  width: 295px;
+  height: 350px;
   border-radius: 15px;
 
-  img {
+  .card-game-image {
     border-radius: 15px 15px 0px 0px;
     width: 100%;
     height: 50%;
@@ -17,5 +17,14 @@
   .card-game-contents {
     height: 50%;
     padding: 20px;
+
+    .card-game-contents-platforms {
+      display: flex;
+      margin-bottom: 10px;
+
+      .card-game-contents-platforms-logos {
+        margin-right: 10px;
+      }
+    }
   }
 }
