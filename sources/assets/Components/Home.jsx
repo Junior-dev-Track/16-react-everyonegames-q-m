@@ -1,7 +1,8 @@
 import API from "../../API";
+import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
-import "../Styles/home/card-game.scss";
 import "../Styles/home/container-game.scss";
+import "../Styles/home/card-game.scss";
 
 const Home = () => {
   const QUERY = "games";
@@ -20,15 +21,21 @@ const Home = () => {
   return (
     <main>
       <div className="container-main">
-        <h1>Games</h1>
+        <h1>Game Lists</h1>
         <section className="container-game">
           {data &&
             data.results &&
-            data.results.map((game, index) => (
+            data.results.map((result, index) => (
               <div key={index} className="card-game">
-                <h2>{game.name}</h2>
-                <img src={game.background_image} />
-                <p>{game.description}</p>
+                <img src={result.background_image} />
+                <div className="card-game-contents">
+                  {result.parent_platforms.map((element, index) => (
+                    <p key={index}>{element.platform.name}</p>
+                  ))}
+                  <Link to="/game/:id">
+                    <button>{result.name}</button>
+                  </Link>
+                </div>
               </div>
             ))}
         </section>
