@@ -23,6 +23,16 @@ const Stores = () => {
           data.results.map((stores, index) => (
             <div key={index}>
               <h2>{stores.name}</h2>
+              <h3>Popular items</h3>
+              <p>{stores.games_count}</p>
+              {stores.games &&
+                Array.isArray(stores.games) &&
+                stores.games.map((game, gameIndex) => (
+                  <div key={gameIndex}>
+                    <p>{game.name}</p>
+                    <p>Added count: {game.added}</p>
+                  </div>
+                ))}
 
               <p>{stores.description}</p>
             </div>
